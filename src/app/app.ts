@@ -1,12 +1,19 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Card } from './core/component/card/card';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Card],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('webapp');
+
+  ngOnInit() {
+    console.log('boa pa nois');
+  }
 }
+
+

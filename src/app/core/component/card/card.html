@@ -1,0 +1,19 @@
+@if (games.isLoading()) {
+  <div>Loading...</div>
+}
+<tbody>
+  @for (game of games.value(); track game.id) {
+    <div class="max-w-xl border border-default rounded overflow-hidden drop-shadow-lg bg-black justify-center justify-items-center">
+      <img class="min-w-md" src="{{game.thumbnail}}" alt="{{game.title}}">
+      <div class="max-w-md px-6 py-4">
+        <div class="max-w-md font-bold text-xl text-gray-300 mb-2">{{game.title}}</div>
+        <p class="max-w-md text-gray-500 text-base">{{game.description}}</p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        @for (platform of game.platforms.split(", ", 10); track $index){
+          <span class="inline-block bg-gray-300 rounded-full px-1 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{platform}}</span>
+        }
+      </div>
+    </div>
+  }
+</tbody>
