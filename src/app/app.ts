@@ -9,7 +9,7 @@ import { Card } from './core/component/card/card';
   styleUrl: './app.css',
 })
 export class App implements OnInit {
-  protected readonly title = signal('webapp');
+  protected readonly title = signal('free-games');
 
   ngOnInit() {
     console.log('boa pa nois');
